@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #e6e6e6;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.navigation {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  height: 50px;
+}
+.navigation__inner {
+  display: flex;
+  max-width: 900px;
+  height: 50px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.toggle:checked ~ .navigation__inner {
+  height: auto;
+}
+.navigation__link {
+  display: block;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+.navigation__link:hover {
+  text-decoration: underline;
+}
+.navigation__logo {
+  flex-shrink: 0;
+  align-self: flex-start;
+  border-left: 1px solid #ccc;
+}
+.navigation__logo .navigation__link {
+  font-weight: bold;
+}
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-right: 0;
+}
+@media screen and (max-width: 400px) {
+  .navigation__item {
+    flex-basis: 100%;
+  }
+}
+.navigation__toggle {
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.navigation__toggle .navigation__link {
+  position: relative;
+  padding-right: 50px;
+}
+.navigation__toggle .navigation__link:after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #000 transparent transparent transparent;
+}
+.toggle:checked ~ .navigation .navigation__toggle .navigation__link:after {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #000 transparent;
+}
+.toggle {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+</style>
+
+<nav class="navigation">
+  <input type="checkbox" id="more" class="toggle"/>
+  <div class="navigation__inner">
+    <div class="navigation__logo"><a href="#" class="navigation__link">Local news</a></div>
+    <ul class="navigation__list">
+      <li class="navigation__item"><a href="#" class="navigation__link">News</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Sport</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Weather</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">TV</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Radio</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Travel</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Music</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Food</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Arts</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Earth</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">Local</a></li>
+    </ul>
+    <div class="navigation__toggle">
+      <label for="more" class="navigation__link">More</label>
+    </div>
+  </div>
+</nav>
+
+</html>
